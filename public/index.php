@@ -12,6 +12,8 @@ if ($_SERVER['APP_DEBUG']) {
     Debug::enable();
 }
 
+list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':' , base64_decode(substr($_SERVER['Authorization'], 6)));
+
 if ($trustedProxies = $_SERVER['TRUSTED_PROXIES'] ?? false) {
     Request::setTrustedProxies(explode(',', $trustedProxies), Request::HEADER_X_FORWARDED_ALL ^ Request::HEADER_X_FORWARDED_HOST);
 }
