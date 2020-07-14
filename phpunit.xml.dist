@@ -27,6 +27,10 @@
         </whitelist>
     </filter>
 
+    <extensions>
+        <extension class="DAMA\DoctrineTestBundle\PhpUnit\PHPUnitExtension" />
+    </extensions>
+
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
     </listeners>
